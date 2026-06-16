@@ -1,6 +1,6 @@
 /* global React, SocialLinks */
 
-const OPEN_TO = ['Freelance projects', 'Consulting', 'Full-time roles', 'A good conversation'];
+const OPEN_TO = ['Freelance projects', 'Consulting'];
 
 function Contact() {
   return (
