@@ -56,14 +56,16 @@ function Experience() {
   return (
     <section id="experience" className="section">
       <div className="container">
-        <div className="section-eyebrow" data-reveal>Experience · 02</div>
-        <h2 className="section-title" data-reveal>
-          A few years of shipping things <em>across startups, research labs and a steel plant.</em>
-        </h2>
+        <div className="section-head section-head-split">
+          <div className="section-eyebrow" data-reveal>Experience · 02</div>
+          <h2 className="section-title" data-reveal>
+            A few years of shipping things <em>across startups, research labs and a steel plant.</em>
+          </h2>
+        </div>
 
-        <div className="exp-list">
+        <div className="exp-board">
           {EXPERIENCE.map((e, i) => (
-            <article key={i} className="exp-item" data-reveal>
+            <article key={i} className={`exp-card ${i === 0 ? 'exp-card-current' : ''}`} data-reveal>
               <div className="exp-period">
                 {e.period}
                 {e.current && <span className="exp-period-current">Now</span>}

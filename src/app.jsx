@@ -33,6 +33,7 @@ function App() {
     const r = parseInt(hex.slice(0, 2), 16);
     const g = parseInt(hex.slice(2, 4), 16);
     const b = parseInt(hex.slice(4, 6), 16);
+    html.style.setProperty('--accent-rgb', `${r}, ${g}, ${b}`);
     html.style.setProperty('--accent-soft', `rgba(${r}, ${g}, ${b}, 0.12)`);
     html.style.setProperty('--font-display', FONT_STACKS[t.fontDisplay] || FONT_STACKS["Bricolage Grotesque"]);
   }, [t.theme, t.accent, t.fontDisplay, t.density]);
@@ -76,6 +77,12 @@ function App() {
   return (
     <>
       <Cursor />
+      <div className="site-ambient" aria-hidden="true">
+        <div className="ambient-field ambient-field-a"></div>
+        <div className="ambient-field ambient-field-b"></div>
+        <div className="ambient-vignette"></div>
+        <div className="ambient-grain"></div>
+      </div>
       <Nav />
       <main>
         <Hero />

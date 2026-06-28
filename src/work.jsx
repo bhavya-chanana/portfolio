@@ -39,30 +39,39 @@ function Work() {
   return (
     <section id="work" className="section">
       <div className="container">
-        <div className="section-eyebrow" data-reveal>Selected Work · 01</div>
-        <h2 className="section-title" data-reveal>
-          Projects across applied ML, agents, <em>and the occasional weekend hack.</em>
-        </h2>
+        <div className="section-head">
+          <div className="section-eyebrow" data-reveal>Selected Work · 01</div>
+          <h2 className="section-title" data-reveal>
+            Projects across applied ML, agents, <em>and the occasional weekend hack.</em>
+          </h2>
+        </div>
 
-        <div className="work-list">
-          {PROJECTS.map((p) => (
+        <div className="work-gallery">
+          {PROJECTS.map((p, i) => (
             <a
               key={p.num}
               href={p.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="work-item"
+              className={`work-card ${i === 0 ? 'work-card-featured' : ''}`}
               data-reveal
             >
-              <div className="work-num">{p.num} / {p.year}</div>
-              <div className="work-name">{p.name}</div>
-              <div className="work-desc">{p.desc}</div>
-              <div className="work-tech">
-                {p.tech.map((t) => (
-                  <span key={t} className="work-tech-chip">{t}</span>
-                ))}
+              <div className="work-visual" aria-hidden="true">
+                <span className="work-visual-num">{p.num}</span>
+                <span className="work-visual-year">{p.year}</span>
+                <span></span><span></span><span></span>
               </div>
-              <div className="work-arrow" aria-hidden="true">↗</div>
+              <div className="work-content">
+                <div className="work-num">{p.num} / {p.year}</div>
+                <div className="work-name">{p.name}</div>
+                <div className="work-desc">{p.desc}</div>
+                <div className="work-tech">
+                  {p.tech.map((t) => (
+                    <span key={t} className="work-tech-chip">{t}</span>
+                  ))}
+                </div>
+              </div>
+              <span className="work-arrow" aria-hidden="true">↗</span>
             </a>
           ))}
         </div>

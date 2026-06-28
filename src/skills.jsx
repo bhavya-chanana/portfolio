@@ -27,12 +27,14 @@ function Skills() {
   return (
     <section id="skills" className="section">
       <div className="container">
-        <div className="section-eyebrow" data-reveal>Stack · 03</div>
-        <h2 className="section-title" data-reveal>
-          Tools I reach for. <em>Always learning the next one.</em>
-        </h2>
+        <div className="section-head section-head-split">
+          <div className="section-eyebrow" data-reveal>Stack · 03</div>
+          <h2 className="section-title" data-reveal>
+            Tools I reach for. <em>Always learning the next one.</em>
+          </h2>
+        </div>
 
-        <div className="skills-grid">
+        <div className="skills-orbit">
           {SKILL_GROUPS.map((g) => (
             <div key={g.num} className="skill-group" data-reveal>
               <div className="skill-group-label">

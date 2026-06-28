@@ -43,7 +43,7 @@ function useReveal() {
       document.querySelectorAll(sel).forEach((el) => {
         if (el.classList.contains('is-visible')) return;
         const r = el.getBoundingClientRect();
-        if (r.top < vh * 0.88 && r.bottom > 0) el.classList.add('is-visible');
+        if (r.top < vh * 0.96 && r.bottom > 0) el.classList.add('is-visible');
       });
     };
 
@@ -97,7 +97,10 @@ function useScrollSpy(ids) {
       let current = ids[0];
       for (const id of ids) {
         const el = document.getElementById(id);
-        if (el && el.offsetTop <= y) current = id;
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY;
+          if (top <= y) current = id;
+        }
       }
       setActive(current);
     };

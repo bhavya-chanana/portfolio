@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "node server.js",
-    "build": "node build.js"
+    "serve": "bun server.js",
+    "build": "bun build.js"
   },
   "keywords": [],
   "author": "",
